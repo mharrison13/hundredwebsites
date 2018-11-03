@@ -47,3 +47,25 @@ bower.json
 # Ignore node_modules
 node_modules/
 
+# compiled output
+/dist
+/tmp
+
+# dependencies
+/node_modules
+/bower_components
+
+# misc
+/.sass-cache
+/connect.lock
+/coverage/*
+/libpeerconnection.log
+npm-debug.log*
+yarn-error.log
+testem.log
+
+# ember-try
+.node_modules.ember-try/
+bower.json.ember-try
+package.json.ember-try
+>>>>>>> Initial Commit from Ember CLI v3.1.4
