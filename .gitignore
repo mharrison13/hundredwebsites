@@ -68,4 +68,6 @@ testem.log
 .node_modules.ember-try/
 bower.json.ember-try
 package.json.ember-try
->>>>>>> Initial Commit from Ember CLI v3.1.4
+
+.DS_Store
+.gitignore_global
