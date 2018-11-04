@@ -1,0 +1,21 @@
+<h2>Website Projects</h2>
+<div class="row">
+  {{#each model as |website|}}
+  <div class="col-md-4">
+    <div class="panel panel-default library-item">
+      <div class="panel-heading">
+        <h3 class="panel-title">{{website.name}}</h3>
+      </div>
+      <div class="panel-body">
+        <p>Url: {{website.url}}</p>
+        <p>Phone: {{website.phone}}</p>
+        <p>Contribution: {{website.fund}}</p>
+      </div>
+      <div class="panel-footer text-right">
+        {{#link-to 'websites.edit' website.id class='btn btn-success btn-xs'}}Edit{{/link-to}}
+        <button class="btn btn-danger btn-xs" {{action 'deleteWebsite' website}}>Delete</button>
+      </div>
+    </div>
+  </div>
+  {{/each}}
+</div>

@@ -9,6 +9,15 @@ const Router = EmberRouter.extend({
 Router.map(function() {
   this.route('about');
   this.route('contact');
+
+  this.route('admin', function() {
+    this.route('request-info');
+  });
+
+  this.route('websites', function () {
+    this.route('new');
+    this.route('edit', { path: '/:website_id/edit' });
+  });
 });
 
 export default Router;
