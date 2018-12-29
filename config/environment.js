@@ -5,7 +5,7 @@ module.exports = function(environment) {
     modulePrefix: 'hundredwebsites',
     environment,
     rootURL: '/',
-    locationType: 'auto',
+    locationType: 'hash',
 
     //firebase info
     firebase: {
