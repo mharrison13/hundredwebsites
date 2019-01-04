@@ -25,6 +25,10 @@ module.exports = function(environment) {
       'connect-src': "'self' wss://*.firebaseio.com https://*.googleapis.com"
     },
 
+    gReCaptcha: {
+      jsUrl: 'https://www.google.com/recaptcha/api.js?render=explicit', // default
+      siteKey: '6Les7IYUAAAAAFncmm5gZPs-c52WipR1bb5thtIE'
+    },
 
     EmberENV: {
       FEATURES: {

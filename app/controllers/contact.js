@@ -1,8 +1,9 @@
 import Controller from '@ember/controller';
-import { match, not, gte, } from '@ember/object/computed';
+import { match, not, gte, equal } from '@ember/object/computed';
 import { and } from '@ember/object/computed';
 
   export default Controller.extend({
+    proceed: '',
     name: '',
     emailAddress: '',
     responseMessage: '',
@@ -13,8 +14,9 @@ import { and } from '@ember/object/computed';
     isDisabled: not('isValid'),
     isLongEnough: gte("message.length", 5),
     isNameLongEnough: gte("message.length", 1),
+    isReCaptchaResponseTrue: equal('proceed', true),
 
-    isValid: and('isValidEmail', 'isLongEnough', 'isNameLongEnough'),
+    isValid: and('isValidEmail', 'isLongEnough', 'isNameLongEnough', 'isReCaptchaResponseTrue'),
 
     clearForm(){
       this.set('responseMessage', `We got your message and we’ll get in touch soon`);
@@ -41,7 +43,12 @@ import { and } from '@ember/object/computed';
         newContact.save().then(function() {
         });
         this.clearForm();
-      }
+      },
+
+      onCaptchaResolved(reCaptchaResponse) {
+        this.set('proceed', true);
+        this.get('model').set('reCaptchaResponse', reCaptchaResponse);
+      },
     }
 
   });
