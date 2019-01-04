@@ -32,10 +32,7 @@
         </div>
 
         <div class="col-xs-10 col-xs-offset-1 col-sm-4 col-sm-offset-0 col-md-4 col-md-offset-0">
-          <select id="selectbasic" name="selectbasic" class="form-control">
-            <option value="1">Landing Page</option>
-            <option value="2">Website</option>
-          </select>
+          <input type="email" class="form-control" placeholder="Your Email" name="Email" value={{emailAddress}} oninput={{action (mut emailAddress) value="target.value"}}>
         </div>
       </div>
 
@@ -47,7 +44,10 @@
       </div>
       <div class="form-horizontal form-group form-group-lg row">
         <div class="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-2 col-md-5 col-md-offset-2">
-          <input type="email" class="form-control" placeholder="Your Email" name="Email" value={{emailAddress}} oninput={{action (mut emailAddress) value="target.value"}}>
+          <select id="selectbasic" name="selectbasic" class="form-control">
+            <option value="1">Landing Page</option>
+            <option value="2">Website</option>
+          </select>
         </div>
         <div class="col-xs-10 col-xs-offset-1 col-sm-offset-0 col-sm-2 col-md-3">
           <button class="btn btn-primary btn-lg btn-block" disabled={{isDisabled}} {{action 'send' model}}>Send</button>
