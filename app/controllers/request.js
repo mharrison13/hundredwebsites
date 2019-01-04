@@ -3,24 +3,34 @@ import { match, not, gte, } from '@ember/object/computed';
 import { and } from '@ember/object/computed';
 
   export default Controller.extend({
-    name: '',
+    firstName: '',
+    lastName: '',
+    domainName: '',
+    worktype: '',
+    hostName: '',
+    message: '',
+    phoneNumber: '',
     emailAddress: '',
     responseMessage: '',
-    message: '',
     headerMessage: 'Send Me a Message',
 
-    isValidEmail: match('emailAddress', /^.+@.+\..+$/),
     isDisabled: not('isValid'),
+    isValidEmail: match('emailAddress', /^.+@.+\..+$/),
     isLongEnough: gte("message.length", 5),
-    isNameLongEnough: gte("message.length", 1),
 
-    isValid: and('isValidEmail', 'isLongEnough', 'isNameLongEnough'),
+
+    isValid: and('isValidEmail', 'isLongEnough'),
 
     clearForm(){
       this.set('responseMessage', `We got your message and we’ll get in touch soon`);
-      this.set('emailAddress', '');
-      this.set('message', '');
-      this.set('name', '');
+      this.set('firstName', ' ');
+      this.set('lastName', ' ');
+      this.set('domainName', ' ');
+      this.set('worktype', ' ');
+      this.set('hostName', ' ');
+      this.set('message', ' ');
+      this.set('phoneNumber', ' ');
+      this.set('emailAddress', ' ');
     },
 
     actions: {
@@ -31,13 +41,18 @@ import { and } from '@ember/object/computed';
         const thisMonth = months[now.getMonth()];
 
         const submittedForm = {
-          name: this.get('name'),
-          emailAddress: this.get('emailAddress'),
+          firstName: this.get('firstName'),
+          lastName: this.get('lastName'),
+          phoneNumber: this.get('phoneNumber'),
+          domainName: this.get('domainName'),
+          worktype: this.get('worktype'),
+          hostName: this.get('hostName'),
           message: this.get('message'),
+          emailAddress: this.get('emailAddress'),
           timestamp: thisMonth + " " + day,
         };
 
-        const newContact = this.store.createRecord('contact', submittedForm);
+        const newContact = this.store.createRecord('request', submittedForm);
         newContact.save().then(function() {
         });
         this.clearForm();

@@ -1,34 +1,33 @@
 <div class="intro">
   <div class="container" id="welcome">
-
     <div class="container">
-
       <br /><br />
-
-      <p>Have a question, contact today</p>
+      <h3>Sent me a message</h3>
+      <p>Please fill out all fields</p>
 
       <div class="form-horizontal form-group form-group-lg row">
         <div class="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-1 col-md-8 col-md-offset-2">
-          {{textarea class="form-control" placeholder="Your message. (At least 5 characters.)" rows="7" value=message}}
+          <textarea class="form-control" placeholder="Your message. (At least 5 characters.)" value={{message}} rows="7" oninput={{action (mut message) value="target.value"}}></textarea>
         </div>
       </div>
+
       <div class="form-horizontal form-group form-group-lg row">
-        <div class="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-1 col-md-5 col-md-offset-2">
-          {{input type="email" value=emailAddress class="form-control" placeholder="Please type your e-mail address."
-          autofocus="autofocus"}}
+        <div class="col-xs-10 col-xs-offset-1 col-sm-offset-0 col-sm-3 col-md-3 col-md-offset-2">
+          <input type="name" class="form-control" placeholder="Your Name" name="Name" value={{name}} oninput={{action (mut name) value="target.value"}}>
         </div>
-        <div class="col-xs-10 col-xs-offset-1 col-sm-offset-0 col-sm-4 col-md-3">
-          <button class="btn btn-primary btn-lg btn-block" disabled={{isDisabled}} {{action 'send'}}>Send</button>
+        <div class="col-xs-10 col-xs-offset-1 col-sm-3 col-sm-offset-1 col-md-3 col-md-offset-0">
+          <input type="email" class="form-control" placeholder="Your Email" name="Email" value={{emailAddress}} oninput={{action (mut emailAddress) value="target.value"}}>
+        </div>
+        <div class="col-xs-10 col-xs-offset-1 col-sm-offset-0 col-sm-4 col-md-2 col-md-offset-0">
+          <button class="btn btn-primary btn-lg btn-block" disabled={{isDisabled}} {{action 'send' model}}>Send</button>
         </div>
       </div>
 
       {{#if responseMessage}}
-        <div class="alert alert-success">{{responseMessage}}</div>
+      <div class="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-1 col-md-8 col-md-offset-2 alert alert-success">
+        {{responseMessage}}
+      </div>
       {{/if}}
-
-      <br /><br />
     </div>
   </div>
 </div>
-
-
