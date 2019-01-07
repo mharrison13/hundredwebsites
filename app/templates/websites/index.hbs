@@ -5,29 +5,26 @@
     <h3>Raised: ${{fund}}.00 <br> Goal: {{percentage}}% <br> Total Sites: {{model.length}}</h3>
     <div class="row">
       {{#each model as |website|}}
-      <div class="col-md-4">
-
-        {{#paper-card as |card|}}
-          {{#card.title as |title|}}
-            {{#title.text as |text|}}
-              {{#text.headline}}{{website.name}}{{/text.headline}}
-              {{#text.subhead}}
-                <div class="panel-body">
-                  <p>Url: {{website.url}}</p>
-                  <p>Phone: {{website.phone}}</p>
-                  <p>Contribution: {{website.fund}}</p>
-                </div>
-              {{/text.subhead}}
-            {{/title.text}}
-
-          {{/card.title}}
-          {{#card.actions}}
-            {{#paper-button}}Visit{{/paper-button}}
-            {{#paper-button}}Share{{/paper-button}}
-          {{/card.actions}}
-        {{/paper-card}}
-
-      </div>
+        <div class="col-md-4">
+          {{#paper-card as |card|}}
+            {{#card.title as |title|}}
+              {{#title.text as |text|}}
+                {{#text.headline}}<h3 class="card">{{website.name}}</h3>{{/text.headline}}
+                {{#text.subhead}}
+                  <div class="panel-body">
+                    <p>Url: {{website.url}}</p>
+                    <p>Phone: {{website.phone}}</p>
+                    <p>Contribution: {{website.fund}}</p>
+                  </div>
+                {{/text.subhead}}
+              {{/title.text}}
+            {{/card.title}}
+            {{#card.actions}}
+              {{#paper-button}}Visit{{/paper-button}}
+              {{#paper-button}}Share{{/paper-button}}
+            {{/card.actions}}
+          {{/paper-card}}
+        </div>
       {{/each}}
     </div>
   </div>

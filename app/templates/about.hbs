@@ -1,58 +1,70 @@
 <div class="intro">
   <div class="container" id="welcome">
-    <div class="container">
-      <br /><br />
-      <h2>About Hundred Websites</h2>
-      <h4>Killing student loan debt one website at a time.</h4>
-      <p> Estimated Student Loan Debt in the United States. {{debt}} </p>
-    </div>
 
-
+    <br /><br />
+    <h2>About Hundred Websites</h2>
+    <h4>Killing student loan debt one website at a time.</h4>
+    <p> Estimated Student Loan Debt in the United States. {{debt}} </p>
 
     <div class="row">
-
       <div class="col-md-4">
-        <div class="panel panel-default library-item about">
-          <div class="panel-heading">
-            <h3>Our Objective</h3>
-          </div>
-          <div class="panel-body">
-            <p>The objective of hundred-websites is simple, alleviate student dept. Through a combination of volunteer work, donations and scholarships, we hope to do our part to help people get out from under the added pressure of stundent loans. </p>
-          </div>
-          <div class="panel-footer text-right">
-            <button class="btn btn-primary" disabled={{isDisabled}}>Learn More</button>
-          </div>
-        </div>
+        {{#paper-card as |card|}}
+          {{#card.title as |title|}}
+            {{#title.text as |text|}}
+              {{#text.headline}}<h3 class="card">Our Objective</h3>{{/text.headline}}
+              {{#text.subhead}}
+                <div class="panel-body about">
+                  <p>The objective of hundred-websites is simple, alleviate student dept. Through a combination of volunteer work,
+                    donations and scholarships, we hope to do our part to help people get out from under the added pressure of stundent
+                    loans. </p>
+                </div>
+              {{/text.subhead}}
+            {{/title.text}}
+          {{/card.title}}
+          {{#card.actions}}
+            {{#paper-button}}Learn More{{/paper-button}}
+          {{/card.actions}}
+        {{/paper-card}}
       </div>
 
       <div class="col-md-4">
-        <div class="panel panel-default library-item about">
-          <div class="panel-heading">
-            <h3>Our Contributors</h3>
-          </div>
-          <div class="panel-body">
-            <p>None of this would be possible without the help of our contributors. They consist of businesses and donors who are in need of a service or want to help current and past students to not be affected by the burden of student loan debt.</p>
-          </div>
-          <div class="panel-footer text-right">
-            <button class="btn btn-primary" disabled={{isDisabled}}>Visit</button>
-          </div>
-        </div>
+        {{#paper-card as |card|}}
+          {{#card.title as |title|}}
+            {{#title.text as |text|}}
+              {{#text.headline}}<h3 class="card">Our Contributers</h3>{{/text.headline}}
+              {{#text.subhead}}
+                <div class="panel-body about">
+                  <p>None of this would be possible without the help of our contributors. They consist of businesses and donors who are
+                    in need of a service or want to help current and past students to not be affected by the burden of student loan
+                    debt.</p>
+                </div>
+              {{/text.subhead}}
+            {{/title.text}}
+          {{/card.title}}
+          {{#card.actions}}
+            {{#paper-button}}Visit{{/paper-button}}
+          {{/card.actions}}
+        {{/paper-card}}
       </div>
 
       <div class="col-md-4">
-        <div class="panel panel-default library-item about">
-          <div class="panel-heading">
-            <h3>Our Scholarship</h3>
-          </div>
-          <div class="panel-body">
-            <p>Our way of giving back is by way of scholarship funds to those seeking education in the field of computer science, information technology and programming. If you or someone you know is interested, apply for our scholarship today.</p>
-          </div>
-          <div class="panel-footer text-right">
-            <button class="btn btn-primary" disabled={{isDisabled}}>Apply</button>
-          </div>
-        </div>
+        {{#paper-card as |card|}}
+          {{#card.title as |title|}}
+            {{#title.text as |text|}}
+              {{#text.headline}}<h3 class="card">Our Scholarship</h3>{{/text.headline}}
+              {{#text.subhead}}
+                <div class="panel-body about">
+                  <p>Our way of giving back is by way of scholarship funds to those seeking education in the field of computer science,
+                    information technology and programming. If you or someone you know is interested, apply for our scholarship today.</p>
+                </div>
+              {{/text.subhead}}
+            {{/title.text}}
+          {{/card.title}}
+          {{#card.actions}}
+            {{#paper-button}}Apply{{/paper-button}}
+          {{/card.actions}}
+        {{/paper-card}}
       </div>
-
     </div>
 
   </div>
