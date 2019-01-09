@@ -1,0 +1,236 @@
+.outer-nav {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+}
+
+.summit-desktop-nav {
+  img {
+    width: 8em;
+    height: auto;
+  }
+
+  li.nav-item {
+    align-self: center;
+
+    a.nav-link {
+      color: $summit-accent-gray-light;
+
+      span.dib {
+        display: inline-block;
+      }
+    }
+
+    a.nav-link:hover {
+      color: white;
+    }
+  }
+
+  a.nav-link {
+    color: $summit-accent-gray-light;
+  }
+
+  a.nav-link:hover {
+    color: white;
+  }
+
+  li.search-input {
+    flex-grow: 1;
+
+    .form-group {
+      width: 100%;
+
+      input.form-control {
+        width: 100%;
+      }
+    }
+  }
+}
+
+.summit-tablet-nav.sub {
+  background-color: #004D60;
+}
+
+.summit-phone-nav.sub {
+  background-color: #004D60;
+}
+
+.summit-tablet-nav {
+  background-color: $summit-blue;
+
+  ul.nav {
+    flex-direction: row;
+    flex-wrap: nowrap;
+  }
+
+  img {
+    width: 7em;
+    height: auto;
+  }
+
+  li.nav-item {
+    align-self: center;
+    padding-top: 10px;
+
+    a.nav-link {
+      color: $summit-accent-gray-light;
+      font-size: 1.2em;
+
+      span.dib {
+        display: inline-block;
+      }
+    }
+
+    a.nav-link:hover {
+      color: white;
+    }
+  }
+
+  a.nav-link {
+    color: $summit-accent-gray-light;
+  }
+
+  a.nav-link:hover {
+    color: white;
+  }
+}
+
+.summit-phone-nav {
+  .navbar-header.top {
+    width: 100%;
+
+    button.navbar-toggler {
+      float: right;
+      border-color: transparent;
+      padding: 0;
+
+      .navbar-toggler-icon {
+        background-image: url(https://s3.amazonaws.com/summit-website-assets/images/nav-menu.svg);
+        font-size: 1.5em;
+      }
+    }
+
+    button:focus {
+      outline: transparent;
+    }
+
+    a.icon {
+      color: $summit-accent-gray-light;
+      margin-right: 1.5em;
+      padding-top: 9px;
+      float: right;
+
+      ion-icon {
+        font-size: 2em;
+      }
+    }
+  }
+
+  img {
+    width: 7em;
+    height: auto;
+  }
+
+  .navbar.navbar-light.navbar-expand-lg {
+    background-color: $summit-blue;
+
+    ul.nav.navbar-nav {
+      padding: 10px;
+    }
+  }
+
+  li.nav-item {
+    a.nav-link {
+      color: $summit-accent-gray-light;
+      font-size: 1.25em;
+
+      span.dib {
+        display: inline-block;
+      }
+    }
+
+    a.nav-link:hover {
+      color: white;
+    }
+  }
+
+  a.nav-link {
+    color: $summit-accent-gray-light;
+  }
+
+  .navbar-light .navbar-nav .show>.nav-link,
+  .navbar-light .navbar-nav .active>.nav-link,
+  .navbar-light .navbar-nav .nav-link.show,
+  .navbar-light .navbar-nav .nav-link.active {
+    color: white;
+  }
+
+  a.nav-link:hover {
+    color: white;
+  }
+}
+
+.primary {
+  background-color: $summit-blue;
+}
+
+.secondary {
+  background-color: #004D60;
+}
+
+.device-tablet {
+  .summit-desktop-nav {
+    display: none;
+  }
+
+  .summit-phone-nav {
+    display: none;
+  }
+
+  .summit-tablet-nav {
+    display: block;
+  }
+}
+
+.device-desktop {
+  .summit-desktop-nav {
+    display: block;
+  }
+
+  .summit-phone-nav {
+    display: none;
+  }
+
+  .summit-tablet-nav {
+    display: none;
+  }
+}
+
+.device-phone {
+  .summit-desktop-nav {
+    display: none;
+  }
+
+  .summit-tablet-nav {
+    display: none;
+  }
+
+  .summit-phone-nav {
+    display: block;
+  }
+}
+
+.device-tablet.screen-orientation-landscape {
+  .summit-desktop-nav {
+    display: block;
+  }
+
+  .summit-phone-nav {
+    display: none;
+  }
+
+  .summit-tablet-nav {
+    display: none;
+  }
+}

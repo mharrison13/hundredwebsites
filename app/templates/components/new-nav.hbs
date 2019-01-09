@@ -1,0 +1,44 @@
+<div class="summit-desktop-nav">
+  <div class="primary">
+    <div class="container">
+      {{#bs-nav type=type justified=justified stacked=stacked as |nav|}}
+        <div class="navbar-header mr-auto">
+          {{#link-to "index" class="navbar-brand"}}
+            <img src="https://s3.amazonaws.com/summit-website-assets/images/Summit-Logo-White.png">
+          {{/link-to}}
+        </div>
+        {{#nav.item class="search-input"}}
+          <a class="nav-link">
+            {{pa-search formclass="form-inline"}}
+          </a>
+        {{/nav.item}}
+        {{#nav.item}}
+          {{#nav.link-to "services"}}
+            Solutions
+          {{/nav.link-to}}
+        {{/nav.item}}
+        {{#nav.item}}
+          {{#nav.link-to "industries"}}Industries{{/nav.link-to}}
+        {{/nav.item}}
+        {{#if customer}}
+          {{#if showClosePunchout}}
+            {{#nav.item}}
+              <a href="#" class="btn nav-link" {{action "closePunchout"}}>PunchOut Session (close)</a>
+            {{/nav.item}}
+          {{/if}}
+          {{#nav.item class="customer-dashboard-link"}}
+            {{#nav.link-to "store.customer" customer.id}}
+              <ion-icon name="ios-person"></ion-icon> <span class="dib">{{account-display-name}}</span>
+            {{/nav.link-to}}
+          {{/nav.item}}
+        {{else}}
+          {{#nav.item}}
+            {{#nav.link-to "login"}}
+              <ion-icon name="log-in"></ion-icon> Login
+            {{/nav.link-to}}
+          {{/nav.item}}
+        {{/if}}
+      {{/bs-nav}}
+    </div>
+  </div>
+</div>
