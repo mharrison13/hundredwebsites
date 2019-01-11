@@ -16,26 +16,33 @@
 
           </div>
         </div>
-
       </div>
 
-      <p>Sign up for information on how you can contribute to this cause.</p>
+  </div>
+</div>
 
-      <div class="form-horizontal form-group form-group-lg row">
-        <div class="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-1 col-md-5 col-md-offset-2">
-          {{input type="email" value=emailAddress class="form-control" placeholder="Please type your e-mail address."
-          autofocus="autofocus"}}
-        </div>
-        <div class="col-xs-10 col-xs-offset-1 col-sm-offset-0 col-sm-4 col-md-3">
-          <button class="btn btn-primary btn-lg btn-block" disabled={{isDisabled}} {{action 'submitRequest'}}>Submit Request</button>
-        </div>
+<section id="hero-image">
+  <img src="https://s-media-cache-ak0.pinimg.com/originals/ae/1d/6e/ae1d6ef744320d237a95fc1e7d6ee98b.jpg">
+</section>
+
+<div class="intro">
+  <div class="container">
+    <p>Sign up for information on how you can contribute to this cause.</p>
+
+    <div class="form-horizontal form-group form-group-lg row">
+      <div class="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-1 col-md-5 col-md-offset-2">
+        {{input type="email" value=emailAddress class="form-control" placeholder="Please type your e-mail address."
+        autofocus="autofocus"}}
       </div>
+      <div class="col-xs-10 col-xs-offset-1 col-sm-offset-0 col-sm-4 col-md-3">
+        <button class="btn btn-primary btn-lg btn-block" disabled={{isDisabled}} {{action 'submitRequest'}}>Submit Request</button>
+      </div>
+    </div>
 
-      {{#if responseMessage}}
-        <div class="alert alert-success">{{responseMessage}}</div>
-      {{/if}}
+    {{#if responseMessage}}
+      <div class="alert alert-success">{{responseMessage}}</div>
+    {{/if}}
 
-      <br /><br />
-
+    <br /><br />
   </div>
 </div>
