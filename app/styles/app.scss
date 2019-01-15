@@ -61,6 +61,18 @@ body {
   font-size: 5em
 }
 
+.largetitle {
+  font-weight: 700;
+  color: white;
+  font-size: 5em
+}
+
+.subtitle {
+  font-weight: 700;
+  color: white;
+  font-size: 2em
+}
+
 html {
   overflow-y: scroll;
 }
@@ -104,3 +116,5 @@ html {
   transform: translateX(-50%);
 
 }
+
+
