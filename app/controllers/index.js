@@ -4,7 +4,7 @@
 
   export default Controller.extend({
     emailAddress: '',
-    headerMessage: 'Hundred Websites',
+    headerMessage: 'One Hundred Websites',
 
     isValid: match('emailAddress', /^.+@.+\..+$/),
     isDisabled: not('isValid'),
